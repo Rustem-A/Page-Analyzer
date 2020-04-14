@@ -9,7 +9,6 @@
     <title>Page Analyzer</title>
   </head>
   <body>
-   <h1>Hello, World!<h2>
   <!--Navbar-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">Navbar</a>
