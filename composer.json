@@ -1,7 +1,7 @@
 {
-    "name": "laravel/laravel",
+    "name": "Rustem-A/Page-Analyzer",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "Page-Analyzer",
     "keywords": [
         "framework",
         "laravel"
