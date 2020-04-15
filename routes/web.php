@@ -14,7 +14,10 @@ use Barryvdh\Debugbar\Facade as Debugbar;
 |
 */
 
-Route::get('/', function () {
-    Debugbar::error('Error!');
-    return view('welcome');
-});
+Route::get('/', 'IndexController@show')->name('index.show');
+
+Route::post('/domains', 'DomainsController@store')->name('domains.store');
+
+Route::get('/domains', 'DomainsController@index')->name('domains.index');
+
+Route::get('/domains/{id}', 'DomainsController@show')->name('domains.show');
