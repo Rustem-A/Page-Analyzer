@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Domains;
 use GuzzleHttp\Client;
+use DiDom\Document;
 
 class DomainsController extends Controller
 {
@@ -16,8 +17,14 @@ class DomainsController extends Controller
         $domain->contentLength = $response->getHeader('Content-Length') ?
                                  implode('', $response->getHeader('Content-Length')) :
                                  strlen($response->getBody());
+        $domain->body = $response->getBody()->getContents();
+        $domain->h1 = $response->getBody()->getContents();
         $domain->save();
     }
+    // $table->text('body')->nullable();
+    // $table->text('h1')->nullable();
+    // $table->text('keywords')->nullable();
+    // $table->text('description')->nullable();
 
     public function store(Request $request)
     {
