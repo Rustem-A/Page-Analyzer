@@ -1,9 +1,7 @@
 @extends('layouts.app')
 
 @section ('urls')
-
-<div>
-    <table class="table">
+<table class="table">
     <thead class="thead-light">
             <tr>
             <th scope="col">id</th>
@@ -19,7 +17,7 @@
         <tbody>
             <tr>
             <th scope="row">{{ $url->id }}</th>
-            <td>{{ $url->name }}</td>
+            <td><a href="{{route('domains.show', $url->id)}}"> {{ $url->name }} </a></td>
             <td>{{ $url->responseCode }}</td>
             <td>{{ $url->contentLength }}</td>
             <td>{{ $url->h1 }}</td>
@@ -27,8 +25,7 @@
             <td>{{ $url->description }}</td>
             </tr>
         </tbody>
-    <br>
 @endforeach
-    </table>
-    </div>
+</table>
+{{ $allUrls->links() }}
 @endsection

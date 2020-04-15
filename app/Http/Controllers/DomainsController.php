@@ -18,13 +18,14 @@ class DomainsController extends Controller
                                  implode('', $response->getHeader('Content-Length')) :
                                  strlen($response->getBody());
         $domain->body = $response->getBody()->getContents();
-        $domain->h1 = $response->getBody()->getContents();
+        $document = new Document($domain->name, true);
+        $domain->h1 = $document->has('h1') ? $document->first('h1')->text() : "Нет заголовка";
+        $domain->keywords = $document->has('meta[name=keywords]') ?
+                            $document->find('meta[name=keywords]')[0]->attr('content') : "Нет ключей";
+        $domain->description = $document->has('meta[name=description]') ?
+                            $document->find('meta[name=description]')[0]->attr('content') : "Нет описания";
         $domain->save();
     }
-    // $table->text('body')->nullable();
-    // $table->text('h1')->nullable();
-    // $table->text('keywords')->nullable();
-    // $table->text('description')->nullable();
 
     public function store(Request $request)
     {
@@ -37,7 +38,7 @@ class DomainsController extends Controller
 
     public function index()
     {
-        $allUrls = Domains::paginate();
+        $allUrls = Domains::paginate(10);
         return view('domains/index', compact('allUrls'));
     }
 
