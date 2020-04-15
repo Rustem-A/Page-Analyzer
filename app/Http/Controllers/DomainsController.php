@@ -29,6 +29,16 @@ class DomainsController extends Controller
 
     public function store(Request $request)
     {
+        $messages = array(
+            'url.required' => 'Поле должно быть заполнено.',
+            'url.min' => 'Url должен быть от :min символов.',
+            'url.regex' => 'Неверный формат url.',
+            'url.active_url' => 'Сайт не доступен.',
+        );
+        $this->validate($request, [
+            'url' => 'required|min:5|active_url|regex:/^http(s)?:\/\/([a-z0-9]{2,63}\.)?[a-z0-9]{2,63}\.[a-z]{2,6}\/?$/'
+        ], $messages);
+
         $url = $request->input('url');
         $domain = Domains::create(['name' => $url]);
         
