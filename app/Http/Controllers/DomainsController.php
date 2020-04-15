@@ -28,9 +28,10 @@ class DomainsController extends Controller
         return redirect()->route('domains.show', ['id' => $domain->id]);
     }
 
-    public function index(Request $request)
+    public function index()
     {
-        return view('domains/index');
+        $allUrls = Domains::paginate();
+        return view('domains/index', compact('allUrls'));
     }
 
     public function show($id)
