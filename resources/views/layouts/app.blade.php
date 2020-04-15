@@ -23,7 +23,13 @@
             <a class="nav-link" href="/">@lang('navbar.check')<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="{{route('domains.index')}}">История</a>
+            <a class="nav-link" href="{{route('domains.index')}}">@lang('navbar.history')</a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="{{route('setlocale', ['locale' => 'ru'])}}">RU</a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="{{route('setlocale', ['locale' => 'en'])}}">EN</a>
         </li>
         </ul>
     </div>

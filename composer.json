@@ -6,6 +6,12 @@
         "SEO",
         "laravel"
     ],
+    "authors": [
+        {
+            "name": "Rustem",
+            "email": "faustyanishe@gmail.com"
+        }
+    ],
     "license": "MIT",
     "require": {
         "php": "^7.2.5",

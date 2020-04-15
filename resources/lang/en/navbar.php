@@ -2,6 +2,7 @@
 
 return [
     'check' => 'Check',
-    'history' => 'History'
+    'history' => 'History',
+    'submit' => 'submit'
 
 ];
