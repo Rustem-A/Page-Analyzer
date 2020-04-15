@@ -21,3 +21,10 @@ Route::post('/domains', 'DomainsController@store')->name('domains.store');
 Route::get('/domains', 'DomainsController@index')->name('domains.index');
 
 Route::get('/domains/{id}', 'DomainsController@show')->name('domains.show');
+
+Route::get('setlocale/{locale}', function ($locale) {
+    if (in_array($locale, \Config::get('app.locales'))) {
+        Session::put('locale', $locale);
+    }
+    return redirect()->back();
+});
