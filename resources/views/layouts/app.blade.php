@@ -13,7 +13,7 @@
   <body>
   <!--Navbar-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="/">Navbar</a>
+    <a class="navbar-brand" href="/"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -25,16 +25,15 @@
         <li class="nav-item">
             <a class="nav-link" href="{{route('domains.index')}}">@lang('navbar.history')</a>
         </li>
-        <li class="nav-item active">
-            <a class="nav-link" href="{{route('setlocale', ['locale' => 'ru'])}}">RU</a>
-        </li>
-        <li class="nav-item active">
-            <a class="nav-link" href="{{route('setlocale', ['locale' => 'en'])}}">EN</a>
+        <li>
+          @yield('form')
         </li>
         </ul>
     </div>
+    <a class="nav-link" href="{{route('setlocale', ['locale' => 'ru'])}}">RU</a>
+    <a class="nav-link" href="{{route('setlocale', ['locale' => 'en'])}}">EN</a>
     </nav>
-      @yield('form')
+      @yield('errors')
       @yield('show')
       @yield('urls')
     <!-- Optional JavaScript -->
