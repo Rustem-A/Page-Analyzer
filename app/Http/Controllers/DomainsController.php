@@ -20,11 +20,11 @@ class DomainsController extends Controller
                                  strlen($response->getBody());
         $domain->body = $response->getBody()->getContents();
         $document = new Document($domain->name, true);
-        $domain->h1 = $document->has('h1') ? $document->first('h1')->text() : "Нет заголовка";
+        $domain->h1 = $document->has('h1') ? $document->first('h1')->text() : "-";
         $domain->keywords = $document->has('meta[name=keywords]') ?
-                            $document->find('meta[name=keywords]')[0]->attr('content') : "Нет ключей";
+                            $document->find('meta[name=keywords]')[0]->attr('content') : "-";
         $domain->description = $document->has('meta[name=description]') ?
-                            $document->find('meta[name=description]')[0]->attr('content') : "Нет описания";
+                            $document->find('meta[name=description]')[0]->attr('content') : "-";
         $domain->save();
     }
 
@@ -53,7 +53,7 @@ class DomainsController extends Controller
 
     public function index()
     {
-        $allUrls = Domains::paginate(10);
+        $allUrls = Domains::orderBy('id', 'DESC')->paginate(10);
         return view('domains/index', compact('allUrls'));
     }
 
