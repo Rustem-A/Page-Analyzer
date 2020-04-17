@@ -32,16 +32,14 @@ class DomainsController extends Controller
     {
         $messages = array(
             'url.required' =>
-            (Session::get('locale') === 'ru') ? 'Поле должно быть заполнено' : 'The field must be filled',
+            trans('validation.required'),
             'url.min' =>
-            (Session::get('locale') === 'ru') ? 'Url должен быть от :min символов.' : 'Url must be from :min characters.',
+            trans('validation.min.string'),
             'url.regex' =>
-            (Session::get('locale') === 'ru') ? 'Неверный формат url.' : 'Invalid url format',
-            'url.active_url' =>
-            (Session::get('locale') === 'ru') ? 'Сайт не доступен.' : 'The site cant be reached'
+            trans('validation.regex')
         );
         $this->validate($request, [
-            'url' => 'required|min:5|active_url|regex:/^http(s)?:\/\/([a-z0-9]{2,63}\.)?[a-z0-9]{2,63}\.[a-z]{2,6}\/?$/'
+            'url' => 'required|min:5|regex:/^http(s)?:\/\/([a-z0-9]{2,63}\.)?[a-z0-9]{2,63}\.[a-z]{2,6}\/?$/'
         ], $messages);
 
         $url = $request->input('url');
