@@ -1,5 +1,8 @@
 @extends('layouts.app')
 
+@section('title')
+    Page-Analyzer
+@endsection
 
 @section('form')
 <form class="form-inline my-2 my-lg-0" action="{{route('domains.store')}}" method="POST">

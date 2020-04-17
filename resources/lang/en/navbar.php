@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'check' => 'Check',
+    'check' => 'Check site',
     'history' => 'History',
-    'submit' => 'submit'
+    'submit' => 'Submit'
 
 ];

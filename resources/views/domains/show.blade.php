@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+    Page-Analyzer
+@endsection
+
 @section('show')
 
 <div>

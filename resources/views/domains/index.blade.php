@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+    History
+@endsection
+
 @section ('urls')
 <table class="table">
     <thead class="thead-light">
