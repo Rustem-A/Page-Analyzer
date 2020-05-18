@@ -1,6 +1,6 @@
 # Page Analyzer
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/14ef50108ecbe570ec3f/maintainability)](https://codeclimate.com/github/Rustem-A/Page-Analizer/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/14ef50108ecbe570ec3f/test_coverage)](https://codeclimate.com/github/Rustem-A/Page-Analizer/test_coverage) [![Build Status](https://travis-ci.com/Rustem-A/Page-Analyzer.svg?branch=master)](https://travis-ci.com/Rustem-A/Page-Analyzer)
+[![Maintainability](https://api.codeclimate.com/v1/badges/0fd8880cabc25c526832/maintainability)](https://codeclimate.com/github/Rustem-A/Page-Analyzer/maintainability) [![Build Status](https://travis-ci.com/Rustem-A/Page-Analyzer.svg?branch=master)](https://travis-ci.com/Rustem-A/Page-Analyzer)
 
 Анализ указанных страниц на SEO пригодность.
 
